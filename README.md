@@ -38,6 +38,10 @@ After you have configured your services go into the folder you have downloaded n
 inspec exec . --attrs attributes/attributes.yml
 ```
 
+### nikto options
+
+Options you can pass to nikto can be found under https://cirt.net/nikto2-docs/options.html
+
 ## Troubleshooting
 
 ### Test docker daemon should be running fails
