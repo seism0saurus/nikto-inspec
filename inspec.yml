@@ -1,0 +1,10 @@
+name: nikto-inspec
+title: Inofficial Nikto2 InSpec Profile
+maintainer: Ulrich Viefhaus
+copyright: Ulrich Viefhaus
+copyright_email: ulrich@itsec-viefhaus.de
+license: Apache-2.0
+summary: This profile tests given url for security issues using the open source scanner nikto2
+version: 0.1.0
+supports:
+  platform: os

@@ -1,0 +1,4 @@
+host: "172.17.0.2"
+ports: "80,443"
+options: "-mutate 1 -maxtime 15m"
+niktoImage: "sullo/nikto"
