@@ -5,17 +5,11 @@ niktoImage = attribute('niktoImage', default: 'sullo/nikto', description: 'nikto
 host = attribute('host', default: 'localhost', description: 'Hosts to scan. Multiple hosts are comma separated')
 ports = attribute('ports', default: '80,443', description: 'Ports of the webservice. Multiple ports are comma separated')
 options = attribute('options', default: '', description: 'additional commandline opotions for nikto')
+dockerOptions = attribute('dockerOptions', default: '', description: 'additional commandline opotions for docker')
 
 control 'nikto-requirements' do                        
   title 'nikto-inspec requirements'             
   desc 'Make sure, that the requrements to test webservices are met.'
-
-  # Needs adjustment if not running systemd
-  describe 'Docker daemon' do
-    subject { systemd_service('docker') }                
-    it { should be_installed }
-    it { should be_running }
-  end
 
   describe 'User has access to docker' do
     subject { command('docker ps') }                
@@ -35,7 +29,7 @@ control 'nikto-test' do
   desc 'Run the test against the services configured in files/servers.yml.'
 
   describe "nikto scan" do
-    subject { command("docker run --rm #{niktoImage} -h #{host} -p #{ports} #{options}") }
+    subject { command("docker run #{dockerOptions} --rm #{niktoImage} -h #{host} -p #{ports} #{options}") }
     it 'should not abort' do
       expect(subject.exit_status).to(be 0)
     end

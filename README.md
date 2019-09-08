@@ -41,10 +41,3 @@ inspec exec . --attrs attributes/attributes.yml
 ### nikto options
 
 Options you can pass to nikto can be found under https://cirt.net/nikto2-docs/options.html
-
-## Troubleshooting
-
-### Test docker daemon should be running fails
-
-The test uses systemd to test if the daemon is running. That will only work on unixes with systemd. If you are not using systemd, you will have to modify the [test](controls/nikto.rb).
-I'm trying to fix this issue.
