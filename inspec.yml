@@ -24,7 +24,7 @@ inputs:
     value: 'localhost'
     required: true
 
-  - name: prots
+  - name: ports
     type: Array
     description: Ports of the webservice. Multiple ports are comma separated
     value:
