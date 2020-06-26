@@ -14,11 +14,11 @@ You can customoze the profile with attribute files and set hosts, ports and comm
 
 You need access to the inspec command on your testmachine. If you don't have inspec installed, follow the instructions here: https://www.inspec.io/downloads/
 
-### Acces to the Docker Demon
+### Access to the Docker Demon
 
 You need access to the docker deamon on your testmachine. If you don't have docker installed, follow the instructions here: https://docs.docker.com/install/. Please see the Docker documentation on how to 
 
-### Nikto Docker image
+### Download the Nikto Docker image
 
 before you can run the nikto profile you have to build the nikto docker image. To build it run
 
@@ -32,7 +32,7 @@ This repository is linked on the official nikto homepage. There are a lot of nik
 
 If you trust one of them and want to use it instead the sullo/nikto image, change it in the example[inputs.example.yml](inputs.example.yml) or create a custom attributes file.
 
-## Usage
+## Running the Profile
 
 You can define as many hosts and urls as you want. As a best practice, copy and rename the `inputs.example.yml` to `your-updated-inputs.yml` for your environment, organization or system.
 
@@ -42,6 +42,6 @@ After you have configured your services go into the folder you have downloaded n
 inspec exec . --input-files <your-updated-inputs.yml>
 ```
 
-### nikto options
+### Passing Options to Nikto
 
 Options you can pass to nikto can be found under https://cirt.net/nikto2-docs/options.html
