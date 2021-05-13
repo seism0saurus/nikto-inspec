@@ -25,11 +25,9 @@ inputs:
     required: true
 
   - name: ports
-    type: Array
+    type: String
     description: Ports of the webservice. Multiple ports are comma separated
-    value:
-      - 80
-      - 443 
+    value: '80,443'
     required: true
 
   - name: options
