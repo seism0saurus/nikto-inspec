@@ -39,7 +39,7 @@ You can define as many hosts and urls as you want. As a best practice, copy and 
 After you have configured your services go into the folder you have downloaded nikto-spec and run
 
 ```bash
-inspec exec . --input-files <your-updated-inputs.yml>
+inspec exec . --input-file <your-updated-inputs.yml>
 ```
 
 ### Passing Options to Nikto
