@@ -1,7 +1,7 @@
 title 'nikto'
 control 'nikto-requirements' do                        
   title 'nikto-inspec requirements'             
-  desc 'Make sure, that the requrements to test webservices are met.'
+  desc 'Make sure, that the requirements to test webservices are met.'
 
   describe 'User has access to docker' do
     subject { command('docker ps') }                
@@ -20,7 +20,7 @@ control 'nikto-test' do
   desc 'Run the test against the services configured in files/servers.yml.'
 
   describe "nikto scan" do
-    subject { command("docker run #{input('dockerOptions')} --rm #{input('niktoImage')} -h #{input('host')} -p #{input('ports')} #{options}") }
+    subject { command("docker run #{input('dockerOptions')} --rm #{input('niktoImage')} -h #{input('host')} -p #{input('ports')} #{input('options')}") }
     it 'should not abort' do
       expect(subject.exit_status).to(be 0)
     end

@@ -34,13 +34,13 @@ inputs:
 
   - name: options
     type: String
-    description: 'Additional commandline opotions the nikto client'
+    description: 'Additional commandline options the nikto client'
     value: ''
     required: false
 
   - name: dockerOptions
     type: String
-    description: 'Additional commandline opotions for the docker client'
+    description: 'Additional commandline options for the docker client'
     value: ''
     required: false
     
