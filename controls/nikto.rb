@@ -17,7 +17,7 @@ end
 
 control 'nikto-test' do                        
   title 'nikto-inspec test'             
-  desc 'Run the test against the services configured in files/servers.yml.'
+  desc 'Run Nikto against the services configured in your input file.'
 
   describe "nikto scan" do
     subject { command("docker run #{input('dockerOptions')} --rm #{input('niktoImage')} -h #{input('host')} -p #{input('ports')} #{input('options')}") }
