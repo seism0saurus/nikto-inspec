@@ -5,6 +5,42 @@ copyright: Ulrich Viefhaus
 copyright_email: ulrich@itsec-viefhaus.de
 license: Apache-2.0
 summary: This profile tests given url for security issues using the open source scanner nikto2
-version: 0.1.0
+
+version: 0.2.0
+
 supports:
   platform: os
+
+inputs:
+  - name: niktoImage
+    type: String
+    description: 'nikto docker image'
+    value: 'sullo/nikto'
+    required: true
+
+  - name: host
+    type: String
+    description: Hosts to scan. Multiple hosts are comma separated
+    value: 'localhost'
+    required: true
+
+  - name: ports
+    type: Array
+    description: Ports of the webservice. Multiple ports are comma separated
+    value:
+      - 80
+      - 443 
+    required: true
+
+  - name: options
+    type: String
+    description: 'Additional commandline opotions the nikto client'
+    value: ''
+    required: false
+
+  - name: dockerOptions
+    type: String
+    description: 'Additional commandline opotions for the docker client'
+    value: ''
+    required: false
+    
